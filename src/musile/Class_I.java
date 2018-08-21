@@ -1,5 +1,7 @@
 package musile ;
 
+
+
 public class Class_I {
 
 	public static void main(String[] args) {
@@ -84,8 +86,8 @@ public class Class_I {
 		
 		
 		
-	    
-	public static void method(String name  )  {
+	    }
+	public static void  method(String name  )  {
 		
 		Stydrnt mike = new Stydrnt();  // Declare mike as object.
 		Stydrnt hayk = new Stydrnt();  // Declare hayk as object.
@@ -107,7 +109,7 @@ public class Class_I {
 		hayk.setLastname("HARUTUNYAN");  // Here we set the lastnames.
 		alik.setLastname("GRIGORYAN");
 		
-		switch(name){
+		switch (name ){
 		case "mike" :
 	    System.out.println(mike.getName()+"     "+mike.getLastname()+"  "+mike.getPhone_number()+"        "+mike.getAge());
 	                    break;
@@ -131,7 +133,6 @@ public class Class_I {
 	
 
 }
-
 
 
 

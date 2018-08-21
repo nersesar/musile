@@ -4,7 +4,7 @@ public class Cube2 {
 	
 	String name ;
 	int age ;
-	static int dude=0;
+	public static int dude=0;
 	
 	Cube2(){
 		dude++;
@@ -12,7 +12,7 @@ public class Cube2 {
 		
 	}
 	
-	public static  int   Hello (){
+	public  static  int   Hello (){
 		
 		return dude ;
 		
