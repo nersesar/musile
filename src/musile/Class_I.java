@@ -1,10 +1,24 @@
 package musile ;
+import java.util.ArrayList; // # 31 .Arraylist in Java .
+                            // We imported the library for Array without size .
+                            
+                             // # 32 . LinkedList in Java .
+                             // We imported the library for LinkList .
+
+import java.util.LinkedList;
+                             // # 34 . ListIterator in Java .  
+                             // We imported for "name.hasnext()" and "name.previous()" methods.
+                             //# 35 . HashSet in Java .
+import java.util.*;          // For a Hashset .
+
+
+
 
 
 
 public class Class_I {
 
-	public static void main(String[] args) {
+	public static void main( String[] args ) {
 
 		
 	    System.out.println("NAME:    LASTNAME:   Phone_number:    Age:   "); // These is just some printout .
@@ -72,8 +86,8 @@ public class Class_I {
 		Rectangel.set_value(10,10);         // Here we use extended method "set_value", and 
 		Triangel.set_value(100,100);        // set values for objects .
 		
-		System.out.println("Rectangel area ="+Rectangel.area()); // At both have created area() 
-		System.out.println("Triangel  area ="+Triangel.area());  // methods which is returning 
+		System.out.println("Rectangel area =" + Rectangel.area()); // At both have created area() 
+		System.out.println("Triangel  area =" + Triangel.area());  // methods which is returning 
 		                                                         // area of our "object" .
 		
 	
@@ -83,11 +97,316 @@ public class Class_I {
 		
 		
 		
+		// # 29 . Java interfaces .
+		
+		Bank jf = new Bank_1();           // You make an object only by subclasses because the main  
+		System.out.println(jf.jerk()) ;    // is interface (Bank()) .
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// # 30 . Recursion in Java .
+		System.out.println(factorial(10)) ; // Printing out .
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+        // # 31 .Arraylist in Java .
+		
+		int simple_array[]= new int[6];   // These array only can have 6 integers .
+		
+		
+		ArrayList<Integer> array =new ArrayList<Integer>(5); // We declear the array without size ,
+		                                                     // 5 is just initial .	
+		array.add(10);                                       // We add numbers in array .  
+		array.add(11);
+		array.add(12);
+		array.add(13);
+		array.add(14);
+		
+		for(Integer x : array)                               // We can use faster method for printing out 
+	          System.out.println(x);		
+		
+	    System.out.println("size of array is="+array.size()); // It's printing out the size of "array" array .
+		
+	    
+	    
+	   
+	    array.remove(4); 	                                  // We removed the 5th integer of array  
+		System.out.println("size of array is="+array.size()); // ,and print out the size and numbers 
+		for(Integer x : array)                                // again .
+	          System.out.println(x);
+		
+		array.set(0, 456);                                    // Here we set the 0 integer to 456 .
+		System.out.println("size of array is="+array.size()); // ,and print out the size and numbers 
+		for(Integer x : array)                                // again .
+	          System.out.println(x);
+		
+		array.trimToSize();                                   //
+		System.out.println("size of array is="+array.size()); // ,and print out the size and numbers 
+		for(Integer x : array)                                // again .
+	          System.out.println(x);
+		
+		array.clear();                                        // These is cleaning all values of array . 
+		System.out.println("size of array is="+array.size()); // ,and print out the size and numbers 
+		for(Integer x : array)                                // again .
+	          System.out.println(x);
+		
+	
+	
+	    // # 32 . LinkedList in Java . 
+		
+		
+		LinkedList<String> name = new LinkedList<String>();  // Here we declare an LinkedList .
+		System.out.println("First ------------------------");
+		name.add("Jons");
+		name.add("Mike");
+		name.add("Tom");
+		name.add("Alik");                                   // Here we declare an names . 
+		name.add("Jons");
+		name.add("Jonson");
+		name.addFirst("1st");
+		name.addLast("last");
+		System.out.println(name.size());                   // Printing out the size of LikedList .
+		name.add(1, "element1");                           // Changing the 1st and 2nd names . 
+		name.add(2,"element2");
+		
+		
+		
+		for(String x : name )                              //Printing out all elements of LikedList .
+			System.out.println(x);
+	
+		System.out.println("First ------------------------");
+	    name.removeFirst();                                // Removing first and last element of LikedList .
+	    name.removeLast();                                    
+	    System.out.println(name.size());                   //Printing out all elements of LikedList .
+	         
+		for(String x : name )                              //Printing out all elements of LikedList .
+			System.out.println(x);
+	         
+	
+		System.out.println("First ------------------------");
+	    name.remove();                                    // Removing all elements of LikedList .
+	    for(String x : name )                             //Printing out all elements of LikedList .
+			System.out.println(x);
+      
+	    System.out.println(name.size());                   // Printing out the size of LikedList .
+	
+	
+	
+	   // # 33 .  Difference between LinkedList vs ArrayList in Java .
+	
+	
+	    long n = (long)1E6;                         // Here we declare long "n" . 1E6 is 10 powered by 6 .
+	    
+	    ArrayList arraylist=new ArrayList();        // Create array .
+	    long time1 =System.currentTimeMillis();     // Set the time "time1"
+	    for(int i=0 ;i<n ;i++)                      // Declaring the array numbers .
+	    {
+	    	arraylist.add(i);
 	    }
-	public static void  method(String name  )  {
+	    System.out.println("Insert array list takes "+(System.currentTimeMillis()-time1)+" ms");		
+	    // Printing out time that takes to feel the array , "System.currentTimeMillis()-time1"  
+	    // it means that we subtract set time "time1" by the current time "System.currentTimeMillis()"
+	    // (is a current time ) . 
+	    
+	    LinkedList linkedlist =new  LinkedList();   // Create linkedlist .
+	    long time2 =System.currentTimeMillis();     // Set the time "time2" .
+	    for(int i=0 ;i<n ;i++)                      // Declaring the linkedlist numbers .
+	    {
+	    	linkedlist.add(i);
+	    }
+	    System.out.println("Insert linkedlist list takes "+(System.currentTimeMillis()-time2)+" ms");	
+	    // Printing out time that takes to feel the linkedlist , "System.currentTimeMillis()-time2"  
+	    // it means that we subtract set time "time1" by the current time "System.currentTimeMillis()"
+	    // (is a current time ) .
+	    
+	    
+	    
+	    time1=System.currentTimeMillis();            // Set the time "time1" .
+	    array.remove(1E5);                           // Deleting the 1E5 number from array .
+	    System.out.println("Delet fornt from array takes "+(System.currentTimeMillis()-time1)+" ms");
+	   
+	    
+	    time2=System.currentTimeMillis();             // Set the time "time2" .
+	    linkedlist.remove(1E5);                       // Deleting the 1E5 number from linkedlist .
+	    System.out.println("Delet fornt from linkedlist takes "+(System.currentTimeMillis()-time2)+" ms");
+	    
+	 
+	    // Here we are geting the number from the array and linkedlist .
+	    
+	    //   time1=System.currentTimeMillis();           
+	    //   array.get((int)n/4);
+	    //  System.out.println("Get  from array takes "+(System.currentTimeMillis()-time1)+" ms");
+	    
+	    
+	    // time2=System.currentTimeMillis();
+	    //  linkedlist.get((int)n/4);
+	    // System.out.println("Get  from linkedlist takes "+(System.currentTimeMillis()-time1)+" ms");
+	    
+	    
+	    // # 34 . ListIterator in Java .
+	    
+	    ArrayList<String> Bank1 =new ArrayList<String>(); // Declaring an array , and some names .
+	    Bank1.add("name_1");      
+	    Bank1.add("name_2");
+	    Bank1.add("name_3");
+	    Bank1.add("name_4");
+	    Bank1.add("name_5");
+	    
+	    
+	    ListIterator<String> Bank2= Bank1.listIterator(); // Declaring  ListIterator for Next and previous
+	    while(Bank2.hasNext())                            // members . And using boolean we can check if 
+	    	System.out.println(Bank2.next());             // array has next member if its true it print's out .
+	    	                                               
+	    System.out.println("");System.out.println("");
+	                      
+	    
+	    while(Bank2.hasPrevious())                      
+	    	System.out.println(Bank2.previous());        // Using boolean we can check if 
+	    	                                             // array has previous  member if its true it print's out .
+    	                                                 // It's starts form the end .
+	    
+	  //# 35 . HashSet in Java .
+	    
+	    
+	    HashSet<String> hash =new HashSet<String>();     // Declaring an Hashset, and some names .
+	    hash.add("hash_1");
+	    hash.add("hash_2");
+	    hash.add("hash_3");
+	    hash.add("hash_4");
+	    hash.add("hash_5");
+	    
+	    Iterator<String> hash2 =hash.iterator();         // Declaring an iterator , and some names .
+	  
+	    System.out.println("");System.out.println("");
+	    
+	    while (hash2.hasNext())                          // Printing out the next values .
+	    	System.out.println(hash2.next());
+	    
+	    name.clear();                                    // It delet's all names in  hashset .
+	    
+	  
+	    
+	    
+	   // # 36 . Catching and Handling Exceptions in Java using Try Catch Blocks .
+	    
+	    int name3[] =new int [3];
+	     
+	    try{                                    // With these function "try{}catch(){}" we can find  
+	        int g= 1023/0;                      // an exception like "1032/0" .        
+	    	
+	    	
+	    	
+	    	System.out.println(name3[4]);         // We can check it's ArithmeticException or 
+	    }catch(ArithmeticException m){            // ArrayIndexOutOfBoundsException or in general
+	    	                                      // just Exception .
+	    	System.out.println(m);
+	    }catch(ArrayIndexOutOfBoundsException m){       
+	    	
+	    	System.out.println(m);
+	    	
+	    } catch(Exception m){
+	    	
+	    	System.out.println(m);
+	    	
+	    }
+	    
+	    
+	    
+	    
+	   
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	     
+	     
+	
+	
+	}	
+		 
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// # 30 . Recursion in Java .
+                                           //Here we create method that counts factorial 
+	                                       // , and we use Recursion .
+	public static int factorial(int N){   
+		
+			if (N<=1)
+				{return 1;}else return (N*factorial(N-1));
+			               
+			
+		                                                        } 
+		
+	
+
+		
+		
+		
+	    
+	    public static void  method(String name  )  {
 		
 		Stydrnt mike = new Stydrnt();  // Declare mike as object.
 		Stydrnt hayk = new Stydrnt();  // Declare hayk as object.
