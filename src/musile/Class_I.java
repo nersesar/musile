@@ -1,4 +1,8 @@
 package musile ;
+
+import java.util.Scanner;   //# 30 . Recursion in Java .
+
+
 import java.util.ArrayList; // # 31 .Arraylist in Java .
                             // We imported the library for Array without size .
                             
@@ -11,10 +15,19 @@ import java.util.LinkedList;
                              //# 35 . HashSet in Java .
 import java.util.*;          // For a Hashset .
 
+                             // # 38 .  Create a File and Write in it Using PrintWriter and File class . 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+                                  // # 39 .  How to Read file using Java .
+import java.io.BufferedReader;    // For files .
+import java.io.FileReader;        // For reading files .
+import java.io.IOException;       // For exceptions .
 
+                                  // # 40 . Using Date & Time + formatting Date using SimpleDateFormat .
 
-
-
+import java.util.Date;
+import java.text.*;
 
 public class Class_I {
 
@@ -256,7 +269,7 @@ public class Class_I {
 	    
 	    
 	    // time2=System.currentTimeMillis();
-	    //  linkedlist.get((int)n/4);
+	    // linkedlist.get((int)n/4);
 	    // System.out.println("Get  from linkedlist takes "+(System.currentTimeMillis()-time1)+" ms");
 	    
 	    
@@ -327,10 +340,40 @@ public class Class_I {
 	    	
 	    }
 	    
+	  //  # 37 .  Java Finally block (try-catch-finally Exception Handling in Java ) .
+	    
+	    
+	    System.out.println(returnInt()); // Here we use try catch with finally result .
+	    
+	    
+	  //  # 38 .  Create a File and Write in it Using PrintWriter and File class . 
+	    try {                                         // At first we auto-generate the try catch block  
+	 File file =new File("new_text_1.txt");           // and imported library for it .
+	                                                  // We Create file named "new_text_1.txt" like object 
+	                                                  // using method .
+	if(!file.exists())                                // We check if file is exist. 
+	{
+		
+			file.createNewFile();
+		} 
+	
+	    PrintWriter pw= new PrintWriter(file);         // Here we crate an object for writing something 
+	    pw.println("Hello everyone ");                 // in file  , after writing we close it .
+	    pw.println(100000000);
+	    pw.close();
+	    System.out.println("Finish");
+	    
+	    
+	    }
 	    
 	    
 	    
-	   
+	    catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
 	    
 	    
 	    
@@ -339,14 +382,81 @@ public class Class_I {
 	    
 	    
 	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
+	// # 39 .  How to Read file using Java .
+	
+	
+	BufferedReader num1 = null ;
+	
+	try{
+		num1 = new BufferedReader(new FileReader("C:\\Users\\aramy\\Documents\\GitHub\\musile\\new_text.txt"));
+		
+		String line;
+		
+		while((line=num1.readLine()) != null){
+			System.out.println(line);
+			
+		}
+		
+	}catch(IOException e){
+		e.printStackTrace();
+		
+		
+	}finally{
+		try {
+			num1.close() ;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	// # 40 . Using Date & Time + formatting Date using SimpleDateFormat .
+	
+	
+	
+	Date new_date =new Date();                     // Create an object .
+    System.out.println(new_date.toString());       // "toString()" method allows to print out ms from 1970 .  
+    System.out.println(new_date.getTime());        // "getTime()" method allows to data of the day . 
+    System.out.println(1+new_date.getMonth());     // Prints out the month starts with 0 .
+    System.out.println(1900+new_date.getYear());   // Prints out year -1900 .
+    System.out.println(new_date.getDay());         // prints day .
+    System.out.println(new_date.getHours());       // print out hours .
+    
+    
+    
+    SimpleDateFormat neww= new  SimpleDateFormat(" E yyyy/MMMM/dd HH-mm-ss 	"); // Using these method we can 
+                                                                                // customize our data output . 
+	System.out.println(neww.format(new_date));
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// # 30 . Recursion in Java .
+
+	
+
+	
+	while (1>0){
+	  System.out.println("Enter the number ");
+	  Scanner input = new Scanner(System.in);
+      int s;
+      s=input.nextInt();
+      long time5 =System.currentTimeMillis();
+      System.out.println(fibonchi (s));
+  	  System.out.println("Counting takes  "+(System.currentTimeMillis()-time5)+" ms");
+  	  
+  	  
+  	  
+     
+	}
+		
+	
 	    
 	    
 	    
@@ -355,7 +465,7 @@ public class Class_I {
 	     
 	
 	
-	}	
+	}
 		 
 		
 		
@@ -395,18 +505,94 @@ public class Class_I {
 	public static int factorial(int N){   
 		
 			if (N<=1)
-				{return 1;}else return (N*factorial(N-1));
+				{return 1;}else {return (N*factorial(N-1));}
 			               
 			
 		                                                        } 
-		
+	
+	
 	
 
+	public static int fibonchi (int m1)
+	   { 
+		
+	       
+		   if (m1==1 || m1==2){
+			   return 1;
+			   
+		   }else 
+		   {  
+			return fibonchi(m1-1)+fibonchi(m1-2);
+			  
+		   
+		   }
+		  
+		   
+		  
+		    
+	   }
+	
+	
+	
+	public static void fibonchi_array (int s ,int n)
+	   {
+		
+		
+		int simple_array_1[][]= new int[100][100];
 		
 		
 		
-	    
-	    public static void  method(String name  )  {
+		
+		for(int i=0 ;i<100;i++){
+			
+			for(int m=0;m<100;m++){
+				
+				
+			}
+			
+		}
+		
+		
+		
+		
+		
+	   }
+	
+	
+	
+		
+	 //  # 37 .  Java Finally block (try-catch-finally Exception Handling in Java ) .
+
+	public static int returnInt(){
+		int a=100;
+		
+		try{
+			a=a/0;
+			
+			return a;
+		}catch(Exception b){
+			System.out.println("Catch Called");    // At 1st it check all Exceptions .
+			System.out.println(b);
+			return a;
+			
+			
+		}finally{
+			a=1012;
+			System.out.println("Finally	 Called"); // 2nd it do finally in any whey  .
+			return a;
+			
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	public static void  method(String name  )  {
 		
 		Stydrnt mike = new Stydrnt();  // Declare mike as object.
 		Stydrnt hayk = new Stydrnt();  // Declare hayk as object.
